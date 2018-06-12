@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                         _selectedFragment = HomeActivity.newInstance();
                         break;
-                    case R.id.navigation_dashboard:
+                    case R.id.navigation_browser:
                         _selectedFragment = BrowserActivity.newInstance();
                         break;
-                    case R.id.navigation_notifications:
+                    case R.id.navigation_memo:
                         _selectedFragment = MemoActivity.newInstance();
                         break;
                 }
