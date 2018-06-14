@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.framelayout, MemoActivity.newInstance());
+        transaction.replace(R.id.framelayout, HomeActivity.newInstance());
         transaction.commit();
 
     }

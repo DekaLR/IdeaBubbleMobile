@@ -13,9 +13,9 @@ import mobile.ideabubble.csq.ideabubblebrowser.R;
  */
 
 public class HomeActivity extends Fragment {
+
     public static HomeActivity newInstance() {
         HomeActivity f = new HomeActivity();
-        //fff
         return f;
     }
 
@@ -29,4 +29,5 @@ public class HomeActivity extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
 }

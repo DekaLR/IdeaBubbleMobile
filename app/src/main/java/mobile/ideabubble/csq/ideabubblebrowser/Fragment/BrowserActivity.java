@@ -1,5 +1,6 @@
 package mobile.ideabubble.csq.ideabubblebrowser.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,11 +17,13 @@ import mobile.ideabubble.csq.ideabubblebrowser.R;
  */
 
 public class BrowserActivity extends Fragment {
+
     public static BrowserActivity newInstance() {
         BrowserActivity f = new BrowserActivity();
         return f;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View Rview = inflater.inflate(R.layout.fragment_browser, container, false);
@@ -29,7 +32,8 @@ public class BrowserActivity extends Fragment {
         mWebView.setWebViewClient(new WebViewClient());
         mWebView.getSettings().setJavaScriptEnabled(true);
 
-        mWebView.loadUrl("https://www.google.com"); //fi
+        mWebView.loadUrl("https://www.google.com");
         return Rview;
     }
+
 }
