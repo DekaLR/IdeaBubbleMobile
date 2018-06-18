@@ -18,8 +18,6 @@ import mobile.ideabubble.csq.ideabubblebrowser.Fragment.MemoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
