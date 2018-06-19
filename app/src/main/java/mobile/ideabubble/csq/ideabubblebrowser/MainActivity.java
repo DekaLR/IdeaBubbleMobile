@@ -15,6 +15,7 @@ import android.widget.TextView;
 import mobile.ideabubble.csq.ideabubblebrowser.Fragment.BrowserActivity;
 import mobile.ideabubble.csq.ideabubblebrowser.Fragment.HomeActivity;
 import mobile.ideabubble.csq.ideabubblebrowser.Fragment.MemoActivity;
+import mobile.ideabubble.csq.ideabubblebrowser.Fragment.onKeyBackPressedListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,5 +52,17 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.framelayout, HomeActivity.newInstance()).commit();
 
+    }
+
+    private onKeyBackPressedListener mOnKeyBackPressedListener;
+
+    public void setOnKeyBackPressedListener(onKeyBackPressedListener listener) {
+        mOnKeyBackPressedListener = listener;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(mOnKeyBackPressedListener != null) mOnKeyBackPressedListener.onBack();
+        else super.onBackPressed();
     }
 }
