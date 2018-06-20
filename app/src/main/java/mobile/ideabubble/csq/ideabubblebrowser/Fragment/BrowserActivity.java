@@ -12,10 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
+
+import javax.xml.parsers.SAXParser;
 
 import mobile.ideabubble.csq.ideabubblebrowser.MainActivity;
 import mobile.ideabubble.csq.ideabubblebrowser.R;
@@ -78,7 +81,16 @@ public class BrowserActivity extends Fragment implements onKeyBackPressedListene
                     search_text.setText(ReturnGoogleUrl);
                 }
             }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                search_text.setText(url);
+            }
         });
+
+
+        mWebView.setWebChromeClient(new WebChromeClient());
 
         mWebView.loadUrl("https://www.google.com");
         mWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
@@ -97,11 +109,20 @@ public class BrowserActivity extends Fragment implements onKeyBackPressedListene
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 //inputManager.hideSoftInputFromWindow(search_text.getWindowToken(),0); //hide keyboard
                 SaveOriginalUrl = search_text.getText().toString();
+
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER) ) {
 
-                    String Url = CheckString(search_text.getText().toString());
-                    mWebView.loadUrl(Url);
+                    if(!SaveOriginalUrl.contains(".")) {
+                        String ReturnGoogleUrl = "https://www.google.co.kr/search?q=" + SaveOriginalUrl + "&oq=" + SaveOriginalUrl;
+                        mWebView.loadUrl(ReturnGoogleUrl);
+                        search_text.setText(ReturnGoogleUrl);
+                    }
 
+                    else {
+                        String Url = CheckString(search_text.getText().toString());
+                        mWebView.loadUrl(Url);
+                        search_text.setText(Url);
+                    }
                 }
                 return false;
             }
