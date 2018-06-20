@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //-------- 브라우저 뒤로가기 처리 ---------
+
     private onKeyBackPressedListener mOnKeyBackPressedListener;
 
     public void setOnKeyBackPressedListener(onKeyBackPressedListener listener) {

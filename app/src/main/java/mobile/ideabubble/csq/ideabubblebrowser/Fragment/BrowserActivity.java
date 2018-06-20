@@ -120,6 +120,7 @@ public class BrowserActivity extends Fragment implements onKeyBackPressedListene
         return str;
     }
 
+    //---------- 브라우저 뒤로가기 처리 -------------
     @Override
     public void onBack() {
         if (mWebView.canGoBack()) {
