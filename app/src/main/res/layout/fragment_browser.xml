@@ -12,22 +12,30 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        card_view:cardBackgroundColor="#ffffff"
-        card_view:cardElevation="0.5dp"
-        android:layout_margin="5dp">
+        card_view:cardBackgroundColor="#f1f1f1"
+        card_view:cardElevation="5dp"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffffff"
-            android:layout_margin="10dp">
+            android:background="#f1f1f1"
+            android:layout_margin="12dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_label_green_24dp"/>
 
             <EditText
-                android:background="#ffffff"
+                android:background="#f1f1f1"
+                android:textColor="#3d3d3d"
                 android:id="@+id/url_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="20dp"
+                android:layout_marginLeft="7dp"
+                android:textSize="15dp"
                 android:hint="Search"
                 android:selectAllOnFocus="true"
 
