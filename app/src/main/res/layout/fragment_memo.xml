@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="#f5f5f5">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout_memo"
@@ -22,12 +23,13 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar_memo">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar_memo"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="65dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/memo" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
